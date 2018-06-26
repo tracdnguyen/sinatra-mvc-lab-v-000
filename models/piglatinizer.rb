@@ -1,18 +1,13 @@
 class PigLatinizer
   attr_accessor :text
 
-  def translate
-    return "" if @text.empty?
-    @text.gsub!(/\w+/) {|word| translate_word(word)}
-  end
-
-  def piglatinize(text)
-    text.concat(text.slice!(/^[^aeiou]*/i || ""))
-
-    text.gsub!(/y$/, "yn") or text.gsub!(/([aeiou])$/, '\1y')
-
-    text.capitalize! if text.downcase!
-
-    text += 'ay'
+  def piglatinize(word)
+    if word =~ (/\A[aeiou]/i)
+        word = word + 'ay'
+      elsif word =~ (/\A[^aeiou]/i)
+        match = /\A[^aeiou]/i.match(word)
+        word = match.post_match + match.to_s + 'ay'
+      end
+      word
   end
 end
