@@ -1,7 +1,7 @@
 class PigLatinizer
   attr_accessor :text
 
-  def piglatinze
+  def piglatinize
     return "" if @text.empty?
     @text.gsub!(/\w+/) {|word| translate_word(word)}
   end
