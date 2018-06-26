@@ -13,6 +13,6 @@ class PigLatinizer
 
     text.capitalize! if text.downcase!
 
-    text += 'ay'
+    text += 'way'
   end
 end
