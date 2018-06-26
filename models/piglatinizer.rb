@@ -7,7 +7,7 @@ class PigLatinizer
   end
 
   def piglatinize(text)
-    text.concat(word.slice!(/^[^aeiou]*/i || ""))
+    text.concat(text.slice!(/^[^aeiou]*/i || ""))
 
     text.gsub!(/y$/, "yn") or word.gsub!(/([aeiou])$/, '\1y')
 
