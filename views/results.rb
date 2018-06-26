@@ -1,0 +1,1 @@
+<h1><%= @pig_latinizer.translate ></h1>
