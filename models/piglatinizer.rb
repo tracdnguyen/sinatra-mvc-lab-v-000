@@ -9,9 +9,9 @@ class PigLatinizer
   def piglatinize(text)
     text.concat(text.slice!(/^[^aeiou]*/i || ""))
 
-    text.gsub!(/y$/, "yn") or word.gsub!(/([aeiou])$/, '\1y')
+    text.gsub!(/y$/, "yn") or text.gsub!(/([aeiou])$/, '\1y')
 
-    text.capitalize! if word.downcase!
+    text.capitalize! if text.downcase!
 
     text += 'ay'
   end
