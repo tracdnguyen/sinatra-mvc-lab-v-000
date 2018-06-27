@@ -11,4 +11,5 @@ class PigLatinizer
         end
         str  = ' ' + str + 'ay'
     end.strip
+  end
 end
